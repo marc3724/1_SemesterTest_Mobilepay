@@ -1,0 +1,240 @@
+Index: src/com/company/Receipt.java
+===================================================================
+diff --git a/src/com/company/Receipt.java b/src/com/company/Receipt.java
+new file mode 100644
+--- /dev/null	
++++ b/src/com/company/Receipt.java	
+@@ -0,0 +1,5 @@
++package com.company;
++
++public class Receipt {
++    //en klasse der sender de 2 usersen kvittering på overførslen
++}
+Index: src/com/company/Transaction.java
+===================================================================
+diff --git a/src/com/company/Transaction.java b/src/com/company/Transaction.java
+new file mode 100644
+--- /dev/null	
++++ b/src/com/company/Transaction.java	
+@@ -0,0 +1,8 @@
++package com.company;
++
++public class Transaction{
++// denne klasse står for alle metoder vi skal bruge for at lave tranaktioner mellem 2 users
++
++
++
++}
+Index: src/com/company/Register.java
+===================================================================
+diff --git a/src/com/company/Register.java b/src/com/company/Register.java
+new file mode 100644
+--- /dev/null	
++++ b/src/com/company/Register.java	
+@@ -0,0 +1,30 @@
++package com.company;
++
++import java.util.Scanner;
++
++public class Register {
++//en klasse lavet til at en bruger kan logge in eller oprette en bruger
++
++
++    public static void login ( ) {
++        System.out.println("welcome to xxxxxxx \n" +
++                            "you can either \"login\" \n" +
++                            "or \"create new user\"");
++        Scanner in = new Scanner(System.in);
++        final String username = in.nextLine();
++
++
++        /*
++        if login does not match database
++        sout "username and password does not match"
++        login();
++         */
++
++    }
++
++    public void createUser ( ) {
++
++    }
++
++
++}
+Index: src/com/company/Userinfo.java
+===================================================================
+diff --git a/src/com/company/Userinfo.java b/src/com/company/Userinfo.java
+new file mode 100644
+--- /dev/null	
++++ b/src/com/company/Userinfo.java	
+@@ -0,0 +1,66 @@
++package com.company;
++
++public class Userinfo {
++//klasse med users info med getters og setters samt constructors
++
++    public class user {
++        private String Fname, Lname;
++        private String Email;
++        private int phone;
++        private int cardNumber,totalAmount;
++        private String username;
++        private String password;
++
++
++
++
++        public String getFname() {
++            return Fname;}
++        public void setFname(String fname) {
++            Fname = fname;}
++
++
++        public String getLname() {
++            return Lname;}
++        public void setLname(String lname) {
++            Lname = lname;}
++
++
++        public int getPhone() {
++            return phone;}
++        public void setPhone(int phone) {
++            this.phone = phone;}
++
++
++        public int getCardNumber() {
++            return cardNumber;}
++        public void setCardNumber(int cardNumber) {
++            this.cardNumber = cardNumber;}
++
++
++        public int getTotalAmount() {
++            return totalAmount;}
++        public void setTotalAmount(int totalAmount) {
++            this.totalAmount = totalAmount;}
++
++
++        public String getUsername() {
++            return username;}
++        public void setUsername(String username) {
++            this.username = username;}
++
++
++        public String getPassword() {
++            return password;}
++        public void setPassword(String password) {
++            this.password = password;}
++
++
++        public String getEmail() {
++            return Email;}
++        public void setEmail(String email) {
++            Email = email;
++        }
++    }
++
++}
+Index: src/com/company/dbSQL.java
+===================================================================
+diff --git a/src/com/company/dbSQL.java b/src/com/company/dbSQL.java
+new file mode 100644
+--- /dev/null	
++++ b/src/com/company/dbSQL.java	
+@@ -0,0 +1,62 @@
++package com.company;
++
++public class dbSQL {
++/*
++    DbSql(){
++        connection = null;
++        stmt = null;
++        try {
++            String url = "jdbc:sqlite:D://Datamatiker/1st semester/DatabaseTest3/studieadministration.db";
++            connection = DriverManager.getConnection(url);
++        } catch (SQLException throwables) {
++            throwables.printStackTrace();
++        }
++    }
++
++//--------------------------------------------------------------------------------------------------------------------
++
++public void opretTabelfag(){
++        try {
++            String sql = "CREATE TABLE IF NOT EXISTS fag (\n"
++                    + "	fagnr integer PRIMARY KEY,\n"
++                    + "	fagnavn TEXT NOT NULL \n"
++                    + ");";
++            Statement stmt = connection.createStatement();
++            stmt.execute(sql);
++            System.out.println("Connection to SQLite has been established.");
++            stmt.close();
++
++        } catch (SQLException throwables) {
++            throwables.printStackTrace();
++        }
++
++    }
++
++//--------------------------------------------------------------------------------------------------------------------
++
++
++    public void opretTabelStud(){
++        try {
++            String sql = "CREATE TABLE IF NOT EXISTS studerende (\n"
++                    + "	stdnr integer PRIMARY KEY,\n"
++                    + "	fnavn TEXT NOT NULL,\n"
++                    + "	enavn TEXT NOT NULL,\n"
++                    + "	adresse TEXT NOT NULL,\n"
++                    + "	postnr TEXT NOT NULL,\n"
++                    + "	mobil TEXT,\n"
++                    + "	klasse TEXT \n"
++                    + ");";
++            Statement stmt = connection.createStatement();
++            stmt.execute(sql);
++            System.out.println("Connection to SQLite has been established.");
++            stmt.close();
++
++        } catch (SQLException throwables) {
++            throwables.printStackTrace();
++        }
++
++    }
++ */
++//--------------------------------------------------------------------------------------------------------------------
++
++}
+Index: .idea/dataSources.xml
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/dataSources.xml	
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
++    <data-source source="LOCAL" name="MobilepayUsers.db" uuid="8ac0c271-ddde-44b0-9325-6ba4c1b95e9b">
++      <driver-ref>sqlite.xerial</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
++      <jdbc-url>jdbc:sqlite:D:\Datamatiker\1st semester\programmering\database\MobilepayUsers.db</jdbc-url>
++      <working-dir>$ProjectFileDir$</working-dir>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/vcs.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
